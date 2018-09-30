@@ -19,23 +19,35 @@ class ViewController: UIViewController, UITableViewDataSource{
         super.viewDidLoad()
         callAPI()
     }
-        
+    
+    /*
+     * Call API function
+     */
     func callAPI() {
         let url = NSURL(string: urlString)
+        //Send get request to the given URL
         URLSession.shared.dataTask(with: (url as? URL)!, completionHandler: {(data, response, error) -> Void in
-            print (data!)
+            //Converting response to readable JSON
             if let jsonObj = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSDictionary {
+                //Validate whether the reponse has a key named 'results'
                 if let resultSet = jsonObj!.value(forKey: "results") as? NSArray {
+                    //Loop through each element in results array in response recieved from the API
                     for element in resultSet {
+                        //Convert curent element into a NSDictionary
                         if let elementDict = element as? NSDictionary {
+                            //Valdiate whehter the current element has a key named 'trackName'
                             if let title = elementDict.value(forKey: "trackName"){
+                                 //Valdiate whehter the current element has a key named 'artistName'
                                 if let artistName = elementDict.value(forKey: "artistName"){
+                                     //Valdiate whehter the current element has a key named 'artworkUrl60'
                                     if let imageURL = elementDict.value(forKey: "artworkUrl60"){
+                                        //Append data into the ListItem
                                         self.listData.append(ListItem(title: title as! String, artistName: artistName as! String, imageURL: imageURL as! String))
                                         OperationQueue.main.addOperation {
-                                             self.tableView.reloadData()
+                                            //Reload table view
+                                            self.tableView.reloadData()
                                         }
-                                       
+                                        
                                     }
                                 }
                             }
@@ -46,14 +58,15 @@ class ViewController: UIViewController, UITableViewDataSource{
         }).resume()
     }
     
+    //Setting number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return listData.count
+        return listData.count
     }
-    
+    //Setting the table view cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
         cell.lblTitle.text = listData[indexPath.row].title
-         cell.lblArtistName.text = listData[indexPath.row].artistName
+        cell.lblArtistName.text = listData[indexPath.row].artistName
         let imgURL = NSURL(string: listData[indexPath.row].imageURL)
         let data = NSData(contentsOf: (imgURL as? URL)!)
         cell.imgLogo.image = UIImage(data: data as! Data)
