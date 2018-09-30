@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class Item {
+class ListItem {
     
     var title: String = ""
     var artistName: String = ""
