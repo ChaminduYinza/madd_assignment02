@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ViewController: UIViewController{
+class ViewController: UIViewController, UITableViewDataSource{
     
     let urlString = "https://itunes.apple.com/search?term=Puzzle&limit=200&entity=software"
     
@@ -29,6 +29,15 @@ class ViewController: UIViewController{
                 print(jsonObj!.value(forKey: "results"))
             }
         }).resume()
+    }
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+    }
+    
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
     }
 }
 

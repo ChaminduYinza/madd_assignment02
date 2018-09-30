@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="78" id="Zla-qT-6HR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="78" id="Zla-qT-6HR" customClass="TableViewCell" customModule="madd_assignment_02" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zla-qT-6HR" id="ehj-6f-eUF">
@@ -66,6 +66,11 @@
                                                 <constraint firstItem="R4W-IR-fzi" firstAttribute="top" secondItem="ehj-6f-eUF" secondAttribute="top" constant="8" id="yr7-wc-JAE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgLogo" destination="wYm-0E-cda" id="65d-l0-ec9"/>
+                                            <outlet property="lblArtistName" destination="vga-00-qGt" id="Ucd-K5-WbW"/>
+                                            <outlet property="lblTitle" destination="R4W-IR-fzi" id="yGv-Il-Que"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -84,7 +89,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="oz5-jl-AHV" id="AqS-eX-9qO"/>
+                        <outlet property="tableView" destination="oz5-jl-AHV" id="MAn-ct-c4g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

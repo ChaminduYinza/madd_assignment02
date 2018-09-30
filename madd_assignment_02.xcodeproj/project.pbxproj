@@ -12,6 +12,7 @@
 		0544A2B5216095CA00DAA494 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0544A2B3216095CA00DAA494 /* Main.storyboard */; };
 		0544A2B7216095CA00DAA494 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0544A2B6216095CA00DAA494 /* Assets.xcassets */; };
 		0544A2BA216095CA00DAA494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0544A2B8216095CA00DAA494 /* LaunchScreen.storyboard */; };
+		0544A2C52160E44A00DAA494 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0544A2C42160E44A00DAA494 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		0544A2B6216095CA00DAA494 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0544A2B9216095CA00DAA494 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0544A2BB216095CA00DAA494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0544A2C42160E44A00DAA494 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				0544A2B6216095CA00DAA494 /* Assets.xcassets */,
 				0544A2B8216095CA00DAA494 /* LaunchScreen.storyboard */,
 				0544A2BB216095CA00DAA494 /* Info.plist */,
+				0544A2C42160E44A00DAA494 /* TableViewCell.swift */,
 			);
 			path = madd_assignment_02;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0544A2C52160E44A00DAA494 /* TableViewCell.swift in Sources */,
 				0544A2B2216095CA00DAA494 /* ViewController.swift in Sources */,
 				0544A2B0216095CA00DAA494 /* AppDelegate.swift in Sources */,
 			);
