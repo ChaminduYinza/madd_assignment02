@@ -8,17 +8,20 @@
 
 import UIKit
 
+let urlString = "https://itunes.apple.com/search?term=Puzzle&limit=200&entity=software"
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        callAPI()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    func callAPI() {
+        let url = NSURL(string: urlString)
+        URLSession.shared.dataTask(with: (url as? URL)!, completionHandler: {(data, response, error) -> Void in
+            print (data!)
+        }).resume()
     }
-
-
+    
 }
 
