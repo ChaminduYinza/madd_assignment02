@@ -8,8 +8,13 @@
 
 import UIKit
 
-let urlString = "https://itunes.apple.com/search?term=Puzzle&limit=200&entity=software"
-class ViewController: UIViewController {
+
+class ViewController: UIViewController{
+    
+    let urlString = "https://itunes.apple.com/search?term=Puzzle&limit=200&entity=software"
+    
+    
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         callAPI()
@@ -20,8 +25,10 @@ class ViewController: UIViewController {
         let url = NSURL(string: urlString)
         URLSession.shared.dataTask(with: (url as? URL)!, completionHandler: {(data, response, error) -> Void in
             print (data!)
+            if let jsonObj = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSDictionary {
+                print(jsonObj!.value(forKey: "results"))
+            }
         }).resume()
     }
-    
 }
 
