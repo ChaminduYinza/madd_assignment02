@@ -12,11 +12,17 @@ class ListItem {
     var title: String = ""
     var artistName: String = ""
     var imageURL:String = ""
+    var formattedPrice: String = ""
+    var wrapperType: String = ""
+    var genre: String = ""
     
-    init(title:String,artistName:String,imageURL:String) {
+    init(title:String,artistName:String,imageURL:String,formattedPrice:String,wrapperType:String,genre:String ) {
         self.title = title
         self.artistName = artistName
         self.imageURL = imageURL
+        self.formattedPrice = formattedPrice
+        self.wrapperType = wrapperType
+        self.genre = genre
     }
 }
 

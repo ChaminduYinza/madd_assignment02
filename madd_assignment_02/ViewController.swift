@@ -19,7 +19,7 @@ class ViewController: UIViewController, UITableViewDataSource, UISearchBarDelega
         searchBar.delegate = self	
         
     }
-   
+    
     /*
      * Call API function
      */
@@ -44,13 +44,24 @@ class ViewController: UIViewController, UITableViewDataSource, UISearchBarDelega
                                 if let artistName = elementDict.value(forKey: "artistName"){
                                     //Valdiate whehter the current element has a key named 'artworkUrl60'
                                     if let imageURL = elementDict.value(forKey: "artworkUrl60"){
-                                        //Append data into the ListItem
-                                        self.listData.append(ListItem(title: title as! String, artistName: artistName as! String, imageURL: imageURL as! String))
-                                        OperationQueue.main.addOperation {
-                                            //Reload table view
-                                            self.tableView.reloadData()
+                                        //Valdiate whehter the current element has a key named 'genres'
+                                        if let genres = elementDict.value(forKey: "genres"){
+                                            //Setting genres array into NSArray inorder to access
+                                            if let  genresDict = genres as? NSArray{
+                                                //Valdiate whehter the current element has a key named 'wrapperType'
+                                                if let wrapperType = elementDict.value(forKey: "wrapperType"){
+                                                    //Valdiate whehter the current element has a key named 'formattedPrice'
+                                                    if let formattedPrice = elementDict.value(forKey: "formattedPrice"){
+                                                        //Append data into the ListItem
+                                                        self.listData.append(ListItem(title: title as! String, artistName: artistName as! String, imageURL: imageURL as! String, formattedPrice: formattedPrice as! String, wrapperType: wrapperType as! String, genre: genresDict[0] as! String))
+                                                        OperationQueue.main.addOperation {
+                                                            //Reload table view
+                                                            self.tableView.reloadData()
+                                                        }
+                                                    }
+                                                }
+                                            }
                                         }
-                                        
                                     }
                                 }
                             }
