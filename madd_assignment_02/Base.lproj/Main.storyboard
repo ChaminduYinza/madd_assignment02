@@ -25,7 +25,7 @@
                                 <color key="barTintColor" red="0.0" green="0.84522684121188174" blue="0.85518539507772018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oz5-jl-AHV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oz5-jl-AHV">
                                 <rect key="frame" x="0.0" y="56" width="375" height="611"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -53,7 +53,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vga-00-qGt">
-                                                    <rect key="frame" x="76" y="47" width="299" height="21"/>
+                                                    <rect key="frame" x="76" y="37" width="299" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="8sp-VM-bBK"/>
                                                     </constraints>
@@ -65,7 +65,7 @@
                                             <constraints>
                                                 <constraint firstItem="R4W-IR-fzi" firstAttribute="leading" secondItem="wYm-0E-cda" secondAttribute="trailing" constant="8" id="8Qk-6I-hs9"/>
                                                 <constraint firstItem="wYm-0E-cda" firstAttribute="top" secondItem="ehj-6f-eUF" secondAttribute="top" constant="8" id="8e8-1Q-I5D"/>
-                                                <constraint firstItem="vga-00-qGt" firstAttribute="top" secondItem="ehj-6f-eUF" secondAttribute="top" constant="47" id="EJc-jz-VFt"/>
+                                                <constraint firstItem="vga-00-qGt" firstAttribute="top" secondItem="ehj-6f-eUF" secondAttribute="top" constant="37" id="EJc-jz-VFt"/>
                                                 <constraint firstAttribute="trailing" secondItem="vga-00-qGt" secondAttribute="trailing" id="Nh9-kM-z5H"/>
                                                 <constraint firstItem="vga-00-qGt" firstAttribute="leading" secondItem="wYm-0E-cda" secondAttribute="trailing" constant="8" id="Pt5-2T-brd"/>
                                                 <constraint firstAttribute="trailing" secondItem="R4W-IR-fzi" secondAttribute="trailing" id="UMN-Iy-JuE"/>
