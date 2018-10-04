@@ -95,7 +95,15 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationController = segue.destination as? PopupVCViewController {
             
-    
+            destinationController.getTitle = listData[(tableView.indexPathForSelectedRow?.row)!].title
+            destinationController.getCompany = listData[(tableView.indexPathForSelectedRow?.row)!].artistName
+            destinationController.getType = listData[(tableView.indexPathForSelectedRow?.row)!].wrapperType
+            destinationController.getGenre = listData[(tableView.indexPathForSelectedRow?.row)!].genre
+            destinationController.getFree = listData[(tableView.indexPathForSelectedRow?.row)!].formattedPrice
+            let imgURL = NSURL(string : listData[(tableView.indexPathForSelectedRow?.row)!].imageURL)
+            let data = NSData(contentsOf: (imgURL as URL?)!)
+            destinationController.getLogo = UIImage(data : data! as Data)!
+            
         }
     }
     
