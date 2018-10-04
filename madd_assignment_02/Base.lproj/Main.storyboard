@@ -243,6 +243,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IHC-SS-b4g"/>
                     </view>
+                    <connections>
+                        <outlet property="lblFree" destination="UzJ-Dz-DzA" id="g9M-2K-qk0"/>
+                        <outlet property="popupUiBox" destination="8pg-g5-ljR" id="UNC-mP-JOo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bze-Hg-f7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

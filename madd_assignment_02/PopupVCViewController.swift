@@ -10,15 +10,22 @@ import UIKit
 
 class PopupVCViewController: UIViewController {
 
+    @IBOutlet weak var popupUiBox: UIView!
+    @IBOutlet weak var lblFree: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        popupUiBox.layer.cornerRadius = 10
+        lblFree.layer.borderWidth = 1
+        lblFree.layer.borderColor = UIColor.green.cgColor
+        lblFree.layer.cornerRadius = 5
+        
+  
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
     
     @IBAction func closePopup(_ sender: Any) {
