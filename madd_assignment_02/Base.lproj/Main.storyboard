@@ -119,7 +119,7 @@
         <!--View Controller-->
         <scene sceneID="5tq-FM-LgI">
             <objects>
-                <viewController id="Ih0-qy-SfG" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="Ih0-qy-SfG" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BiY-NL-tfo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -206,7 +206,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="kl3-Xf-goh" firstAttribute="leading" secondItem="8pg-g5-ljR" secondAttribute="leading" constant="2" id="2W5-ne-sBP"/>
                                     <constraint firstItem="XrD-Rl-BTz" firstAttribute="top" secondItem="8pg-g5-ljR" secondAttribute="top" constant="17" id="2Wa-Am-6Bu"/>
@@ -232,7 +232,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8pg-g5-ljR" firstAttribute="centerY" secondItem="BiY-NL-tfo" secondAttribute="centerY" id="8Mf-5h-725"/>
                             <constraint firstItem="8pg-g5-ljR" firstAttribute="centerX" secondItem="BiY-NL-tfo" secondAttribute="centerX" id="MjT-A6-JQr"/>
