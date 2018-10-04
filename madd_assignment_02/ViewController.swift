@@ -105,11 +105,14 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         return cell
     }
     
+    //Trigers when select a table view cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //Perform seague popup
         performSegue(withIdentifier: "PopUpVC", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Set related data in modal
         if let destinationController = segue.destination as? PopupVCViewController {
             destinationController.getTitle = listData[(tableView.indexPathForSelectedRow?.row)!].title
             destinationController.getCompany = listData[(tableView.indexPathForSelectedRow?.row)!].artistName
