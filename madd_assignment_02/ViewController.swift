@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ViewController: UIViewController, UITableViewDataSource, UISearchBarDelegate{
+class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegate, UISearchBarDelegate{
     
     var listData:[ListItem] = []
     @IBOutlet weak var searchBar: UISearchBar!
@@ -17,7 +17,9 @@ class ViewController: UIViewController, UITableViewDataSource, UISearchBarDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-        // welcome to new world
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
         
     }
     
@@ -86,6 +88,15 @@ class ViewController: UIViewController, UITableViewDataSource, UISearchBarDelega
         let data = NSData(contentsOf: (imgURL as URL?)!)
         cell.imgLogo.image = UIImage(data: data! as Data)
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "PopUpVC", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationController = segue.destination as? PopupVCViewController {
+            
+    
+        }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
