@@ -15,11 +15,11 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
-        super.viewDidLoad()       
+        super.viewDidLoad()
         searchBar.delegate = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
+        self.hideKeyboard()
         
     }
     
@@ -117,6 +117,19 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
             return
         }
         self.callAPI(paramURL: encodedString!)
+    }
+}
+
+extension UIViewController {
+    //This function will trigger when the user type anywhere else after promt the keyboard and the current keyboard will be hiden from the view
+    func hideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 
