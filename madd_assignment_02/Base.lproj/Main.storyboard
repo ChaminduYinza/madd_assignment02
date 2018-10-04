@@ -102,6 +102,7 @@
                         <outlet property="searchBar" destination="BfF-ZD-AaH" id="P8p-4G-7GU"/>
                         <outlet property="searchDisplayController" destination="ldh-bV-ZPk" id="LaA-iE-NeW"/>
                         <outlet property="tableView" destination="oz5-jl-AHV" id="MAn-ct-c4g"/>
+                        <segue destination="Ih0-qy-SfG" kind="presentation" identifier="PopUpVC" id="aRn-L0-Qlu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
