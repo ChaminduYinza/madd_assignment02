@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()       
         searchBar.delegate = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
