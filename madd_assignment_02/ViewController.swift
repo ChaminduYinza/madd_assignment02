@@ -23,6 +23,21 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         
     }
     
+    //Call InternetValidity class Connection function in order to validate internet conectivity
+    override func viewDidAppear(_ animated: Bool) {
+        if !InternetValidtity.Connection(){
+            self.Alert(Message: "Your device is not connected with internet")
+        }
+    }
+    
+    //Alert function
+    func Alert (Message: String){
+        let alert = UIAlertController(title: "Alert", message: Message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
     /*
      * Call API function
      */
@@ -89,12 +104,13 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         cell.imgLogo.image = UIImage(data: data! as Data)
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "PopUpVC", sender: self)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationController = segue.destination as? PopupVCViewController {
-            
             destinationController.getTitle = listData[(tableView.indexPathForSelectedRow?.row)!].title
             destinationController.getCompany = listData[(tableView.indexPathForSelectedRow?.row)!].artistName
             destinationController.getType = listData[(tableView.indexPathForSelectedRow?.row)!].wrapperType
@@ -103,7 +119,6 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
             let imgURL = NSURL(string : listData[(tableView.indexPathForSelectedRow?.row)!].imageURL)
             let data = NSData(contentsOf: (imgURL as URL?)!)
             destinationController.getLogo = UIImage(data : data! as Data)!
-            
         }
     }
     
